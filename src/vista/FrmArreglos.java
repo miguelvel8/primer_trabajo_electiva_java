@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 package vista;
+
 import controlador.Random;
-import controlador.Matrices;
+import controlador.Matriz;
 import controlador.Vectores;
+
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
@@ -14,15 +16,14 @@ import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
 
 /**
- *
  * @author salan403
  */
 public class FrmArreglos extends javax.swing.JFrame {
 
-     
     public FrmArreglos() {
         initComponents();
     }
+    public Matriz matriz;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,16 +54,28 @@ public class FrmArreglos extends javax.swing.JFrame {
         txtN = new javax.swing.JTextField();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            String[] strings = {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5"};
+
+            public int getSize() {
+                return strings.length;
+            }
+
+            public String getElementAt(int i) {
+                return strings[i];
+            }
         });
         jScrollPane4.setViewportView(jList1);
 
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            String[] strings = {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5"};
+
+            public int getSize() {
+                return strings.length;
+            }
+
+            public String getElementAt(int i) {
+                return strings[i];
+            }
         });
         jScrollPane5.setViewportView(jList2);
 
@@ -71,48 +84,54 @@ public class FrmArreglos extends javax.swing.JFrame {
         jLabel1.setText("Equipos Futbol");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
+                new Object[][]{
+                        {},
+                        {},
+                        {},
+                        {}
+                },
+                new String[]{
 
-            }
+                }
         ));
         jScrollPane1.setViewportView(jTable1);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
+                new Object[][]{
+                        {},
+                        {},
+                        {},
+                        {}
+                },
+                new String[]{
 
-            }
+                }
         ));
         jScrollPane2.setViewportView(jTable2);
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
+                new Object[][]{
+                        {},
+                        {},
+                        {},
+                        {}
+                },
+                new String[]{
 
-            }
+                }
         ));
         jScrollPane3.setViewportView(jTable3);
 
         jList3.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            String[] strings = {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5"};
+
+            public int getSize() {
+                return strings.length;
+            }
+
+            public String getElementAt(int i) {
+                return strings[i];
+            }
         });
         jScrollPane6.setViewportView(jList3);
 
@@ -149,180 +168,166 @@ public class FrmArreglos extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
-                    .addComponent(jScrollPane3))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel2)))
-                        .addGap(61, 61, 61))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(NombreEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(59, 59, 59)
-                        .addComponent(IngresarPuntajes, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67)
-                        .addComponent(CalcularEstadisticas))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(204, 204, 204)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(227, 227, 227)))
-                .addGap(150, 150, 150))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jScrollPane2)
+                                        .addComponent(jScrollPane3))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(30, 30, 30)
+                                                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(jLabel2)))
+                                                .addGap(61, 61, 61))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txtN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(35, 35, 35))))
+                        .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(NombreEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(59, 59, 59)
+                                                .addComponent(IngresarPuntajes, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(67, 67, 67)
+                                                .addComponent(CalcularEstadisticas))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(204, 204, 204)
+                                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGap(227, 227, 227)))
+                                .addGap(150, 150, 150))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(20, 20, 20)
-                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(128, 128, 128)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 10, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)))
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NombreEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(IngresarPuntajes, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CalcularEstadisticas, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(71, 71, 71))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(txtN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(jLabel2)
+                                                                .addGap(20, 20, 20)
+                                                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(128, 128, 128)))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(layout.createSequentialGroup()
+                                                .addGap(0, 10, Short.MAX_VALUE)
+                                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(27, 27, 27)
+                                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(29, 29, 29)))
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(NombreEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(IngresarPuntajes, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(CalcularEstadisticas, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(71, 71, 71))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void IngresarPuntajesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarPuntajesActionPerformed
-       int n;
-       Random objRandom= new Random ();
-       n=Integer.parseInt(txtN.getText());
-       int mat[][]= new int [n][n];
-        for (int j= 0; j < n; j++) // llenar por columnas la matriz
+        int n;
+        Random objRandom = new Random();
+        n = Integer.parseInt(txtN.getText());
+        int mat[][] = new int[n][n];
+        for (int j = 0; j < n; j++) // llenar por columnas la matriz
         {
-            
-            for (int i = 0; i < n; i++) 
-            {
-                if (i>j)
-                {
-                    
-                    
-                    mat[i][j]=objRandom.Azar();
-                    if(mat[i][j]==0)
-                    {
-                        mat[j][i]=3;
+
+            for (int i = 0; i < n; i++) {
+                if (i > j) {
+
+
+                    mat[i][j] = objRandom.Azar();
+                    if (mat[i][j] == 0) {
+                        mat[j][i] = 3;
+                    } else if (mat[i][j] == 1) {
+                        mat[j][i] = 1;
+                    } else if (mat[i][j] == 3) {
+                        mat[j][i] = 0;
                     }
-                    else if (mat[i][j]==1)
-                    {
-                        mat[j][i]=1;
-                    }
-                    else if(mat[i][j]==3)
-                    {
-                        mat[j][i]=0;
-                    }
-                   
-                   
+
+
                 }
-                
+
             }
         }
-         Object objMat[][]= new Object[n][n];
-        String objTit[]= new String[n];
-        for(int i=0;i<n;i++){
-           for(int j=0;j<n;j++) {
-               objMat[i][j]= mat[i][j];
-           }
+        Object objMat[][] = new Object[n][n];
+        String objTit[] = new String[n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                objMat[i][j] = mat[i][j];
+            }
         }
-        DefaultTableModel objMod = new DefaultTableModel(objMat,objTit);
+        DefaultTableModel objMod = new DefaultTableModel(objMat, objTit);
         jTable2.setModel(objMod);
-        
-       JTableHeader header= jTable2.getTableHeader();
-       TableColumnModel colMod = header.getColumnModel();
-        for (int j= 0; j < n; j++) // llenando header de matriz (tabla)
+
+        JTableHeader header = jTable2.getTableHeader();
+        TableColumnModel colMod = header.getColumnModel();
+        for (int j = 0; j < n; j++) // llenando header de matriz (tabla)
         {
             TableColumn tabCol = colMod.getColumn(j);
-            tabCol.setHeaderValue("Equipo # "+(j+1) );
+            tabCol.setHeaderValue("Equipo # " + (j + 1));
             header.repaint();
         }
-       Matrices matriz= new Matrices();
-        matriz.setN(n);
-        matriz.setMat(mat);
+        this.setMatriz(mat);7
 
     }//GEN-LAST:event_IngresarPuntajesActionPerformed
+    public setMatriz(int [][] matriz){
+        this.matriz = matriz;
+    }
 
     private void CalcularEstadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalcularEstadisticasActionPerformed
-         
-        Matrices matriz= new Matrices(); 
+
         int vec[];
-         int n=matriz.getN();
-         matriz.sumarColumnas();
-         vec=matriz.getVec();
-         String [] NomTit= new String[n];
-         Object objMat[][]= new Object [1][n];
+        vec = this.matriz.sumarColumnas();
+      /*
+        String[] NomTit = new String[n];
+        Object objMat[][] = new Object[1][n];
         //paso 2
-        for(int i=0;i<1;i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                objMat[i][j]=vec[j];
+        for (int i = 0; i < 1; i++) {
+            for (int j = 0; j < n; j++) {
+                objMat[i][j] = vec[j];
             }
         }
         // paso 3 y agregar libreria 
-        DefaultTableModel objMod=new DefaultTableModel (objMat,NomTit);
-        jTable3.setModel(objMod);
-         
-         
-         
+        DefaultTableModel objMod = new DefaultTableModel(objMat, NomTit);
+        jTable3.setModel(objMod);*/
+
+
     }//GEN-LAST:event_CalcularEstadisticasActionPerformed
 
     private void NombreEquiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreEquiposActionPerformed
         // aqui solo ingresar
-        int n=0;
-        n=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número de equipos "));
-        String [] NomEquipos = new String[n];
-        String [] NomTit= new String[n];
-        for (int j=0;j<n;j++) 
-        {
-            NomEquipos[j]=JOptionPane.showInputDialog("Ingrese el nombre del equipo # "+j );
+        int n = 0;
+        n = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número de equipos "));
+        String[] NomEquipos = new String[n];
+        String[] NomTit = new String[n];
+        for (int j = 0; j < n; j++) {
+            NomEquipos[j] = JOptionPane.showInputDialog("Ingrese el nombre del equipo # " + j);
         }
         txtN.setText(Integer.toString(n)); // convierto a string y en el cuadro de texto me guarda el valor
         // paso 1
-        Object objMat[][]= new Object [1][n];
+        Object objMat[][] = new Object[1][n];
         //paso 2
-        for(int i=0;i<1;i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                objMat[i][j]=NomEquipos[j];
+        for (int i = 0; i < 1; i++) {
+            for (int j = 0; j < n; j++) {
+                objMat[i][j] = NomEquipos[j];
             }
         }
         // paso 3 y agregar libreria 
-        DefaultTableModel objMod=new DefaultTableModel (objMat,NomTit);
+        DefaultTableModel objMod = new DefaultTableModel(objMat, NomTit);
         jTable1.setModel(objMod);
     }//GEN-LAST:event_NombreEquiposActionPerformed
 
@@ -334,6 +339,7 @@ public class FrmArreglos extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        this.matriz = new Matriz()
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
