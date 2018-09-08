@@ -46,7 +46,7 @@ public class Matriz {
 
     public int [] sumarColumnas() {
 
-        int [] vectorSumarColumnas =null;
+        int [] vectorSumarColumnas = new int[this.numeroColumnasFilas];
         int sumaCol=0;
         for (int j = 0; j < this.numeroColumnasFilas; j++) {
             sumaCol = 0;

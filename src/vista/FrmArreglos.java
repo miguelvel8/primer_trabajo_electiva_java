@@ -21,9 +21,10 @@ import javax.swing.table.TableColumnModel;
 public class FrmArreglos extends javax.swing.JFrame {
 
     public FrmArreglos() {
-                this.matriz = new Matriz();
+        this.matriz = new Matriz();
         initComponents();
     }
+
     public Matriz matriz;
 
     /**
@@ -285,7 +286,8 @@ public class FrmArreglos extends javax.swing.JFrame {
         this.setMatriz(mat);
 
     }//GEN-LAST:event_IngresarPuntajesActionPerformed
-    public void setMatriz(int [][] matriz){
+
+    public void setMatriz(int[][] matriz) {
         this.matriz.setMat(matriz);
     }
 
@@ -293,20 +295,18 @@ public class FrmArreglos extends javax.swing.JFrame {
 
         int vec[];
         vec = this.matriz.sumarColumnas();
-      /*
+
         String[] NomTit = new String[n];
         Object objMat[][] = new Object[1][n];
         //paso 2
-        for (int i = 0; i < 1; i++) {
-            for (int j = 0; j < n; j++) {
-                objMat[i][j] = vec[j];
-            }
+        for (int j = 0; j < n; j++) {
+            objMat[0][j] = vec[j];
         }
+
         // paso 3 y agregar libreria 
         DefaultTableModel objMod = new DefaultTableModel(objMat, NomTit);
-        jTable3.setModel(objMod);*/
-
-
+        jTable3.setModel(objMod);
+        
     }//GEN-LAST:event_CalcularEstadisticasActionPerformed
 
     private void NombreEquiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreEquiposActionPerformed
