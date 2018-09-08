@@ -9,11 +9,19 @@ package controlador;
  *
  * @author salan403
  */
-public class Vectores {
+public class Vector {
     
     int vec[];
     int n;
 
+    public Vector(int[] vec) {
+        this.vec = vec;
+    }
+    public Vector(){
+        
+    }
+   
+    
     public int[] getVec() {
         return vec;
     }
@@ -32,9 +40,9 @@ public class Vectores {
     
     public void ordenarVectorBurbuja(){
         int aux;
-        for(int i=0;i<n-1;i++){
-            for(int j=i+1;j<n;j++){
-                if(vec[i]>vec[j]){
+        for(int i=0;i<this.vec.length-1;i++){
+            for(int j=i+1;j<vec.length;j++){
+                if(vec[i]<vec[j]){
                     aux=vec[i];
                     vec[i]=vec[j];
                     vec[j]=aux;
@@ -42,4 +50,6 @@ public class Vectores {
             }
         }
     }
+    
+    
 }

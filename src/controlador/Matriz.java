@@ -17,7 +17,7 @@ public class Matriz {
 
     int matriz[][];
     int numeroColumnasFilas;
-    Vectores v = new Vectores();
+    Vector vec = new Vector();
 
     public Matriz(int[][] mat) {
         this.matriz = mat;
@@ -34,6 +34,7 @@ public class Matriz {
 
     public void setMat(int[][] mat) {
         this.matriz = mat;
+        this.numeroColumnasFilas=mat.length;
     }
 
     public int getN() {
@@ -56,7 +57,10 @@ public class Matriz {
             }
             vectorSumarColumnas[j] = sumaCol;
         }
-        return vectorSumarColumnas;
+        vec.setVec(vectorSumarColumnas);
+        vec.ordenarVectorBurbuja();
+        return vec.getVec();
+        
 
     }
 

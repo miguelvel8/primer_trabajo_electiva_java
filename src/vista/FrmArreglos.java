@@ -7,7 +7,7 @@ package vista;
 
 import controlador.Random;
 import controlador.Matriz;
-import controlador.Vectores;
+import controlador.Vector;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -296,11 +296,14 @@ public class FrmArreglos extends javax.swing.JFrame {
         int vec[];
         vec = this.matriz.sumarColumnas();
 
-        String[] NomTit = new String[n];
-        Object objMat[][] = new Object[1][n];
+        String[] NomTit = new String[vec.length];
+        Object objMat[][] = new Object[1][vec.length];
         //paso 2
-        for (int j = 0; j < n; j++) {
+        
+        for (int j = 0; j < vec.length; j++) {
             objMat[0][j] = vec[j];
+            
+            
         }
 
         // paso 3 y agregar libreria 
