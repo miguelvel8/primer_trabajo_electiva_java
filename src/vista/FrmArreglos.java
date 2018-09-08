@@ -21,6 +21,7 @@ import javax.swing.table.TableColumnModel;
 public class FrmArreglos extends javax.swing.JFrame {
 
     public FrmArreglos() {
+                this.matriz = new Matriz();
         initComponents();
     }
     public Matriz matriz;
@@ -281,11 +282,11 @@ public class FrmArreglos extends javax.swing.JFrame {
             tabCol.setHeaderValue("Equipo # " + (j + 1));
             header.repaint();
         }
-        this.setMatriz(mat);7
+        this.setMatriz(mat);
 
     }//GEN-LAST:event_IngresarPuntajesActionPerformed
-    public setMatriz(int [][] matriz){
-        this.matriz = matriz;
+    public void setMatriz(int [][] matriz){
+        this.matriz.setMat(matriz);
     }
 
     private void CalcularEstadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalcularEstadisticasActionPerformed
@@ -339,7 +340,6 @@ public class FrmArreglos extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        this.matriz = new Matriz()
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

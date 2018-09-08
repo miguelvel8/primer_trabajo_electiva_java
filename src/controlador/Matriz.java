@@ -12,14 +12,12 @@ import java.util.Set;
  *
  * @author salan403
  */
-import vista.FrmArreglos;
 
 public class Matriz {
 
     int matriz[][];
     int numeroColumnasFilas;
     Vectores v = new Vectores();
-    FrmArreglos Fr = new FrmArreglos();
 
     public Matriz(int[][] mat) {
         this.matriz = mat;
@@ -48,15 +46,15 @@ public class Matriz {
 
     public int [] sumarColumnas() {
 
-        int [] vectorSumarColumnas;
-        int sumaCol;
+        int [] vectorSumarColumnas =null;
+        int sumaCol=0;
         for (int j = 0; j < this.numeroColumnasFilas; j++) {
-            suamCol = 0;
+            sumaCol = 0;
             for (int i = 0; i < this.numeroColumnasFilas; i++) {
 
                 sumaCol = sumaCol + this.matriz[i][j];
             }
-            vectorSumarColumnas[j] = sumCol;
+            vectorSumarColumnas[j] = sumaCol;
         }
         return vectorSumarColumnas;
 
